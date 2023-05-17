@@ -55,3 +55,20 @@ p1 {
   margin-right: auto;
   width: 70%;
 }
+
+.termspriv {
+  font-size: 18px;
+  transition: var(--transition-1);
+}
+
+.termslist {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.termspriv:is(:hover, :focus) {
+  color: var(--blue-crayola);
+}
