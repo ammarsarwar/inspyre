@@ -3,6 +3,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <style>
+.active { border-color: orangered; }
+
+@media (hover: hover) {
+              input[type="checkbox"] { z-index: -1 }
+  .card:hover input[type="checkbox"],
+              input[type="checkbox"]:focus,
+              input[type="checkbox"]:checked { z-index: auto }
+}
+@media (pointer: coarse) { 
+  input[type="checkbox"] {
+    height: 2em;
+    width: 2em;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -16,7 +47,7 @@ body {
   margin: 100px auto;
   font-family: Raleway;
   padding: 40px;
-  width: 40%;
+  width: 60%;
   min-width: 300px;
 }
 
@@ -44,6 +75,7 @@ input.invalid {
 }
 
 button {
+  
   background-color: #04AA6D;
   color: #ffffff;
   border: none;
@@ -63,6 +95,7 @@ button:hover {
 
 /* Make circles that indicate the steps of the form: */
 .step {
+ 
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -85,34 +118,72 @@ button:hover {
 <body>
 
 <form id="regForm" action="/action_page.php">
-  <h1>Sponsor Information:</h1>
+  
   <!-- One "tab" for each step in the form: -->
-  <div class="tab">Sponsor's Name:
-    <p><input placeholder="Name..." oninput="this.className = ''" name="fname"></p>
-    Sponsor's Email:
+  <div class="tab">
+    Please enter your Sponsor's Email:
     <p><input type="email" placeholder="E-mail..." oninput="this.className = ''" name="email" ></p>
     <!-- <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
   </div>
   
    <div class="tab">
-    <p>Choose between PAMM account or iLefa academy</p>
-
-    <a href="https://pamm.fxsway.com/app/join/314/ilefaexclusive"></a>
-     <input type="radio" name="kits" value="ilefa" ><label><a href="D:/inspyree/pages/products/ilefaproducts.html">ilefa academy</a> </label>
-    <input type="radio" name="kits" value="xft" ><label><a href="D:\inspyree\pages\products\automotiveproducts.html"> Xft starter kits</a></label>
-     <input type="radio" name="kits" value="mixed kits" ><label>Mixed kits</label>
-
+    Choose
+    <br>
+   <div style="display: flex; gap: 15px; padding: 10px;">
+    
+<div class="card">
+   <input type="checkbox" />
+  <img src="../../assets/images/square_ilefa.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>iLefa Academy</b></h4> 
+   <a href="../products/ilefaproducts.html"><p>Click here for more info</p> </a> 
   </div>
-  <div class="tab">Contact Info:
+</div>
+<div class="card">
+   <input type="checkbox" />
+  <img src="../../assets/images/xft_starter_kit.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>XFT starter kit</b></h4> 
+  <a href="../products/automotiveproducts/xft_kits.html"><p>Click here for more info</p> </a> 
+  </div>
+</div>
+<div class="card">
+   <input type="checkbox" />
+  <img src="../../assets/images/mixed_kits.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Mixed Kits</b></h4> 
+    <a href="../products/healthproducts.html"><p>Click here for more info</p> </a>  
+  </div>
+</div>
+<div class="card">
+   <input type="checkbox" />
+  <img src="../../assets/images/diamond_kit.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Diamond Kit</b></h4> 
+    <a href="../products/healthproducts.html"><p>Click here for more info</p> </a>  
+  </div>
+</div>
+   </div>
+
+
+ 
+    </div>
+    <br>
+    <br>
+
+    
+  </div>
+  <div class="tab">Please Enter your information
     <p><input type="text" placeholder="First Name..." oninput="this.className = ''" name="fname"></p>
     <p><input type="text" placeholder="Last Name..." oninput="this.className = ''" name="lname"></p>
     <p><input type="email" placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
     <p><input type="password" placeholder="Password..." oninput="this.className = ''" name="pass"></p>
   </div>
-  
+   
  
   <div style="overflow:auto;">
     <div style="float:right;">
+    
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
@@ -200,6 +271,20 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+
+
+
+$(document).ready(function () {
+  // Card Multi Select
+  $('input[type=checkbox]').click(function () {
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    }
+    else
+    { $(this).parent().addClass('active'); }
+  });
+});
 </script>
 
 </body>
