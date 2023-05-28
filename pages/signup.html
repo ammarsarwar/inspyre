@@ -1,0 +1,55 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <title>Centered Form</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #form-container {
+            width: 75%;
+            max-width: 1024px;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <div id="wufoo-zm0w72p1ps35qq">
+            Fill out my <a href="https://tparrow.wufoo.com/forms/zm0w72p1ps35qq">online form</a>.
+        </div>
+        <script type="text/javascript">
+            var zm0w72p1ps35qq;
+            (function(d, t) {
+                var s = d.createElement(t), options = {
+                    'userName':'tparrow',
+                    'formHash':'zm0w72p1ps35qq',
+                    'autoResize':true,
+                    'height':'676',
+                    'async':true,
+                    'host':'wufoo.com',
+                    'header':'show',
+                    'ssl':true
+                };
+                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'secure.wufoo.com/scripts/embed/form.js';
+                s.onload = s.onreadystatechange = function() {
+                    var rs = this.readyState;
+                    if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                    try {
+                        zm0w72p1ps35qq = new WufooForm();
+                        zm0w72p1ps35qq.initialize(options);
+                        zm0w72p1ps35qq.display();
+                    } catch (e) {}
+                };
+                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
+                par.insertBefore(s, scr);
+            })(document, 'script');
+        </script>
+    </div>
+</body>
+</html>

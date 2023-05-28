@@ -299,6 +299,8 @@ body.active {
 .section-text {
   font-size: var(--fs-5);
   margin-block: 15px 35px;
+    text-align: justify;
+  
 }
 
 .section-list {
@@ -460,6 +462,8 @@ body.active {
 .hero-text {
   font-size: var(--fs-5);
   margin-block: 25px 40px;
+  text-align: justify;
+  
 }
 
 /*-----------------------------------*\
