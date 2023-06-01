@@ -156,6 +156,15 @@ a {
   max-width: 1170px;
   margin: 4em auto;
 }
+@media screen and (max-width: 200px) {
+  .pricing-container {
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+     
+    
+  }
+}
 
 .pricing-container {
   margin: 6em auto;
@@ -386,7 +395,7 @@ a {
     display: none;
   }
   .exclusive .pricing-wrapper > li {
-    box-shadow: inset 0 0 0 3px #2d3e50;
+    /* box-shadow: inset 0 0 0 3px #2d3e50; */
   }
   .has-margins .pricing-wrapper > li,
   .has-margins .exclusive .pricing-wrapper > li {
@@ -638,7 +647,7 @@ a {
 }
 
 .no-touch .secondary-theme .exclusive .select:hover {
-  background-color: #112e3c;
+  /* background-color: #112e3c; */
 }
 
 .has-margins .select {

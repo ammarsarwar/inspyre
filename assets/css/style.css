@@ -388,7 +388,7 @@ body.active {
 .nav-toggle-btn .line {
   width: 26px;
   height: 3px;
-  background-color: var(--white);
+  background-color: var(--black);
   transition: var(--transition-1);
 }
 
